@@ -130,17 +130,17 @@ Implement the render function.
 
 ```
 render():JSX.Element{
-const {value} = this.state;
-return (
-<div>
-  <Label htmlFor="textfield-normal" label={this.props.label||""} />
-  <Input
-    id="textfield-normal"
-    value={value}
-    onChange={this.onChangeEvent}
-   />
-</div>
-);
+    const {value} = this.state;
+    return (
+        <div>
+          <Label htmlFor="textfield-normal" label={this.props.label||""} />
+          <Input
+            id="textfield-normal"
+            value={value}
+            onChange={this.onChangeEvent}
+           />
+        </div>
+    );
 }
 ```  
 
@@ -164,8 +164,13 @@ private onChangeEvent = (event: React.FormEvent<HTMLInputElement>): void => {
 
 }
 ```  
-And just as before, the first part (`setState()`) is concerned about updating the internal state of the react component, while the second part is there to signal to the PCF component that something has changed. Once you get to testing part, try removing one statement or the other, and see what happens! It is kind of silly!  
+And just as before, the first part `setState()` is concerned about updating the internal state of the react component, while the second part is there to signal to the PCF component that something has changed. Once you get to testing part, try removing one statement or the other, and see what happens! It is kind of silly!  
 
 And if you got this far, then you have finished the implementing the react component! Well done! Now just one more thing left.
+
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/75603877/139687923-5a708989-69c6-4c26-ac29-9ef8aa182add.png"><br>
+I am not a React expert so this might not be best practice. If you can better, I will be happy to learn from you. :)
+</p>
 
 ### 4. That index.ts really tied the component together
