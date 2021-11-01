@@ -245,3 +245,28 @@ This is the result, cleaned from the extra comments.
 <img src = "https://user-images.githubusercontent.com/75603877/139726694-05fbf672-1a5d-4efd-bc6e-ce64842bcc28.png"><br>
 The last chunk of code.
 </p> 
+
+### 5. And thats a wrap
+
+Nothing left to do other than:  
+`npm run build`  
+`npm start`  
+this will start a test environment on the **localhost port 8181** where you can pass different stuff to your component to test it out. Congradulations! Your first component looks handsome! :)  
+
+Now it is time to set it free and let it loose upon the world (or the test environment, same, same). Make a new folder in your busy folder. CD into it and run  
+`pac solution init --publisher-name <publisher name> --publisher-prefix <publisher prefix>`  
+for example:  
+`pac solution init --publisher-name Ivana --publisher-prefix git773`  
+
+then add a reference to your component:  
+`pac solution add-reference --path ..\`  
+
+and build the solution. For this you will need `msbuild`. If it does not work in the terminal in VSCode, move to **Developers Command Prompt for VS**.  
+`msbuild /t:restore`  
+`/t:restore` part is only necessary the first time.  
+
+Now your unmanaged solution should be nice and packaged and you can find the zip in the `\bin\debug` folder. Import it manually to the environment of choice.
+
+
+
+
