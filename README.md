@@ -261,9 +261,8 @@ for example:
 then add a reference to your component:  
 `pac solution add-reference --path ..\`  
 
-and build the solution. For this you will need `msbuild`. If it does not work in the terminal in VSCode, move to **Developers Command Prompt for VS**.  
+and build the solution. `/t:restore` part is only necessary the first time.  
 `msbuild /t:restore`  
-`/t:restore` part is only necessary the first time.  
 
 Now your unmanaged solution should be nice and packaged and you can find the zip in the `\bin\debug` folder. Import it manually to the environment of choice.
 
