@@ -171,6 +171,24 @@ And if you got this far, then you have finished the implementing the react compo
 <p align = "center">
 <img src = "https://user-images.githubusercontent.com/75603877/139687923-5a708989-69c6-4c26-ac29-9ef8aa182add.png"><br>
 I am not a React expert so this might not be best practice. If you can better, I will be happy to learn from you. :)
-</p>
+</p>  
 
-### 4. That index.ts really tied the component together
+### 4. That index.ts really tied the component together  
+
+This is going to be cool! Index.ts is the implementation of the PCF component, and it is the link between the Manifest and the React component. The template comes with a lot of stuff inside, but most are comments, and the rest are standard functions. So, this will be a breeze.  
+
+First step, import what needs importing.
+```
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { edsInputWrap, edsInputWrapProps } from './edsInputWrap';
+```  
+That proud moment when you import your component; like a pro!
+
+Ok, cool, so what do you actually need? Well, definitely not a constructor, you can ignore that one. But you need some private fields, like `container` for the HTML Div Element that is going to hold you component, `notifyOutputChanged` function to signal to the component that it needs to update, and props that you can use to pass the data around.  
+```
+private container: HTMLDivElement;
+private notifyOutputChanged: () => void;
+private props: edsInputWrapProps = {valueChanged: this.valueChanged.bind(this)};
+```  
+Obviously, valueChanged event handler from the properties was connected to another valueChanged function. That one we will need to implement here in **index.ts**. 
