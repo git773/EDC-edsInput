@@ -170,7 +170,7 @@ And just as before, the first part `setState()` is concerned about updating the 
 And if you got this far, then you have finished the implementing the react component! Well done! Now just one more thing left.
 
 <p align = "center">
-<img src = "https://user-images.githubusercontent.com/75603877/139687923-5a708989-69c6-4c26-ac29-9ef8aa182add.png"><br>
+<img src = "https://user-images.githubusercontent.com/75603877/139726682-bb57261f-a238-421b-9833-a601a5339abd.png"><br>
 I am not a React expert so this might not be best practice. If you can better, I will be happy to learn from you. :)
 </p>  
 
@@ -225,9 +225,11 @@ return {value: this.props.value};
 ReactDOM.unmountComponentAtNode(this.container);
 ```
 
-And the most interesting of all is `updateView()` which interfaces directly with the React component and renders it when the `notifyOutputChanged()` is called.
+And the most interesting of all is `updateView()` which interfaces directly with the React component and renders it when the `notifyOutputChanged()` is called. First you should get fresh value and label from the context, and then pass those on to your React component.
 
 ```
+this.props.value = context.parameters.value.raw || undefined;
+this.props.label = context.parameters.label.raw || undefined;
 ReactDOM.render(
     React.createElement(
         edsInputWrap,
@@ -235,4 +237,11 @@ ReactDOM.render(
     ),
     this.container
 );
-```
+```  
+
+This is the result, cleaned from the extra comments.
+
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/75603877/139726694-05fbf672-1a5d-4efd-bc6e-ce64842bcc28.png"><br>
+The last chunk of code.
+</p> 
