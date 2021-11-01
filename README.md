@@ -133,6 +133,7 @@ render():JSX.Element{
     const {value} = this.state;
     return (
         <div>
+          <link rel="stylesheet" href="https://eds-static.equinor.com/font/equinor-font.css"/>
           <Label htmlFor="textfield-normal" label={this.props.label||""} />
           <Input
             id="textfield-normal"
