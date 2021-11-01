@@ -207,6 +207,7 @@ With the complicated part is out of the way, let's get back to standard function
 ```
 this.container = container;
 this.props.value = context.parameters.value.raw || undefined;
+this.props.label = context.parameters.label.raw || undefined;
 this.notifyOutputChanged = notifyOutputChanged;
 
 ```
@@ -214,9 +215,23 @@ this.notifyOutputChanged = notifyOutputChanged;
 `getOutputs()` is there to capture the changes from the **bound** properties (those that can serve as both inputs and outputs, check the **ManifestTypes.d.ts**) and pass their values back to Dataverse. In this case, only bound property is value, so that is what you should use.  
 
 ```
-return {edsInput: this.props.value};
+return {value: this.props.value};
 ```  
 
-The `edsInput` here is the component name from the manifest.
+`destroy()` is just a cleanup function to manage memory and get rid of the container.  
 
+```
+ReactDOM.unmountComponentAtNode(this.container);
+```
 
+And the most interesting of all is `updateView()` which interfaces directly with the React component and renders it when the `notifyOutputChanged()` is called.
+
+```
+ReactDOM.render(
+    React.createElement(
+        edsInputWrap,
+        this.props
+    ),
+    this.container
+);
+```
