@@ -269,10 +269,10 @@ Now your unmanaged solution should be nice and packaged and you can find the zip
 
 P.S. If you got this far, shout out! :) We are all curious to see your PCF component!
 
-### References
-*Microsoft docs: https://docs.microsoft.com/en-us/powerapps/developer/component-framework/overview
-PCF gallery: https://pcf.gallery/
-Good for React/PCF beginners: https://blog.dynamicscode.net/2019/06/26/react-extended-boundary-of-powerapps-component-framework/ 
-Some stuff from the community: https://www.youtube.com/c/Powerthon/search?query=pcf 
-*
+### References  
+*Microsoft docs:* https://docs.microsoft.com/en-us/powerapps/developer/component-framework/overview  
+*PCF gallery:* https://pcf.gallery/  
+*Good for React/PCF beginners:* https://blog.dynamicscode.net/2019/06/26/react-extended-boundary-of-powerapps-component-framework/  
+*Some stuff from the community:* https://www.youtube.com/c/Powerthon/search?query=pcf
+
 
