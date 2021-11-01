@@ -82,5 +82,7 @@ Now the properties are done, the only thing left are resources and APIs. Resourc
 One down, two to go. All this text for 13 lines of code.
 </p>
 
+Good work so far! Now that the Manifest is in place, run `npm run build` to get the other manifest (**ManifestTypes.d.ts**) generated according to your definition.
+
 
 ### 3. Implement the React component
