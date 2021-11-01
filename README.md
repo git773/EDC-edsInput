@@ -22,7 +22,7 @@ For example: `pac pcf init --namespace edcPCF --name edsInput --template field`
 
 Since EDS is using react components, you also need to add the following:  
 `npm install --save-dev @types/react`  
-`npm install --save-dev @types/reactdom`  
+`npm install --save-dev @types/react-dom`  
 `npm install @equinor/eds-core-react styled-components`  
 `npm install typescript --save-dev`
 
