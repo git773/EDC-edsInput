@@ -191,4 +191,32 @@ private container: HTMLDivElement;
 private notifyOutputChanged: () => void;
 private props: edsInputWrapProps = {valueChanged: this.valueChanged.bind(this)};
 ```  
-Obviously, valueChanged event handler from the properties was connected to another valueChanged function. That one we will need to implement here in **index.ts**. 
+It is important to notice that the valueChanged event handler from the properties was connected to another valueChanged function. That one needs to be implement here in **index.ts**. And its purpose will be to update the props value when it changes and update the output/view based on it. Here is how it can look like:
+
+```
+private valueChanged(newValue: string) {
+    if (this.props.value != newValue) {
+        this.props.value = newValue;
+        this.notifyOutputChanged();
+    }
+}
+```
+
+With the complicated part is out of the way, let's get back to standard functions. **Index.ts** should consist of `constructor()`, `init()`, `updateView()`, `getOutputs()`, `destroy()`. `init()` is there to start off the component; an entry function. It captures the data from the context and it is convenient to store its arguments internaly in the component fields for use in other functions.  
+
+```
+this.container = container;
+this.props.value = context.parameters.value.raw || undefined;
+this.notifyOutputChanged = notifyOutputChanged;
+
+```
+
+`getOutputs()` is there to capture the changes from the **bound** properties (those that can serve as both inputs and outputs, check the **ManifestTypes.d.ts**) and pass their values back to Dataverse. In this case, only bound property is value, so that is what you should use.  
+
+```
+return {edsInput: this.props.value};
+```  
+
+The `edsInput` here is the component name from the manifest.
+
+
