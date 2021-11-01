@@ -148,3 +148,24 @@ There are several important lines there. First, it is important to pick up the v
 
 So, the next thing to add is the onChange handler: onChangeEvent.  
 
+```
+private onChangeEvent = (event: React.FormEvent<HTMLInputElement>): void => {
+
+    this.setState(
+        (prevState:edsInputWrapState):edsInputWrapState => {
+            prevState.value = event.currentTarget.value;
+            return prevState;
+        }
+    );
+
+    if(this.props.valueChanged) {
+        this.props.valueChanged(event.currentTarget.value);
+    }
+
+}
+```  
+And just as before, the first part (`setState()`) is concerned about updating the internal state of the react component, while the second part is there to signal to the PCF component that something has changed. Once you get to testing part, try removing one statement or the other, and see what happens! It is kind of silly!  
+
+And if you got this far, then you have finished the implementing the react component! Well done! Now just one more thing left.
+
+### 4. That index.ts really tied the component together
