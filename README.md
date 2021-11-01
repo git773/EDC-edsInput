@@ -86,3 +86,65 @@ Good work so far! Now that the Manifest is in place, run `npm run build` to get 
 
 
 ### 3. Implement the React component
+
+Let's make another file in your busy folder for you to worry about. This is going to be your react component. So make the file **edsInputWrap.tsx** and add all the boilerplate for a react class.
+
+```
+import * as React from 'react';
+import { Input, Label } from '@equinor/eds-core-react';
+
+export interface edsInputWrapProps {}
+
+export interface edsInputWrapState extends React.ComponentState, edsInputWrapProps{}
+
+export class edsInputWrap extends React.Component<edsInputWrapProps,edsInputWrapState> {
+
+    constructor(props: edsInputWrapProps) {
+        super(props);
+        this.state = {};
+    }
+
+    render():JSX.Element{
+        return (<div>
+            
+        </div>);
+        
+    }
+}
+```
+
+It is important to add both the properties and the state. The properties are the interface towards the PCF while the state is important to make sure the component is responsive. For the properties, you need the value, label and a way to signal something has changed.  
+
+```
+export interface edsInputWrapProps {
+  value?:string;
+  label?:string;
+  valueChanged?:(newValue:string)=>void;
+}
+```  
+
+The value is the most important for the state, so in the constructor, pass the state the initial value.  
+`this.state = {value: props.value || undefined}`  
+
+Implement the render function.  
+
+```
+render():JSX.Element{
+const {value} = this.state;
+return (
+<div>
+  <Label htmlFor="textfield-normal" label={this.props.label||""} />
+  <Input
+    id="textfield-normal"
+    value={value}
+    onChange={this.onChangeEvent}
+   />
+</div>
+);
+}
+```  
+
+There are several important lines there. First, it is important to pick up the value from the state, and not the properties. State is going to change and we want that reflected on the screen. Second, fixed label is fine. If there is no label passed down, it is probably a mistake, since it is required in the component, but in that case we display the empty string. And finally, the onChange event handler is necessary to do the updates to the component on change. (both React component and passing the data back to the PCF component require an onChange handler)  
+
+So, the next thing to add is the onChange handler: onChangeEvent.  
+
