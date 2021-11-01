@@ -73,7 +73,7 @@ Can you guess what this property does? Neither can an unsuspected citizen develo
 
 And secondly, we have `of-type="SingleLine.Text" usage="bound" required="true"`. `required` attribute is clear enough, but `usage` and `of-type` could use some explaining. `usage` can be one of two things: **bound** or **input**. These values refer to the flow of data. If it is input, that means that the component will just receive data from Dataverse / user and be happy with it. This makes sense for the label property. Bound on the other hand, means that the data will be able to flow both ways, and that the component will be able to influence the value of the Dataverse column it is bound to on setup. Interesting.
 
-`of-type` sets the expected format of the property value. The list of formats can be found in the reference. It is also possible to define something similar to custom format by defining the `type-group` and setting the `of-type-group` attribute. In case of the input field, for both the label and the value, `SingleLine.Text` is the best choice.
+`of-type` sets the expected format of the property value. The list of formats can be found in the reference. It is also possible to define something similar to custom format by defining the `type-group` and setting the `of-type-group` attribute. For Input label and value, `SingleLine.Text` is the best choice.
 
 Now the properties are done, the only thing left are resources and APIs. Resources are important because they connect your component manifest to the component implementation. You can add additional resources if you need them, but at minimum you should always have **index.ts** in there. For the APIs, you won't be needing any of those for this simple Input component, so it is ok to delete the extra green and admire your clean and finished Manifest.
 
@@ -83,3 +83,4 @@ One down, two to go. All this text for 13 lines of code.
 </p>
 
 
+### 3. Implement the React component
