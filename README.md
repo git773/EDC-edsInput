@@ -261,7 +261,7 @@ for example:
 then add a reference to your component:  
 `pac solution add-reference --path ..\`  
 
-and build the solution. `/t:restore` part is only necessary the first time.  
+and build the solution. `restore` part is only necessary the first time.  
 `msbuild /t:build /restore`  
 
 Now your unmanaged solution should be nice and packaged and you can find the zip in the `\bin\debug` folder. Import it manually to the environment of choice.
