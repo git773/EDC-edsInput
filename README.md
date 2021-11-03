@@ -10,7 +10,7 @@ Hello! Let's roll:
 3. [Microsoft Power Platform CLI](https://docs.microsoft.com/en-us/powerapps/developer/data-platform/powerapps-cli#install-power-apps-cli)
 4. [Build Tools for Visual Studio](https://visualstudio.microsoft.com/) or .NET build tools (msbuild is what you need)
 
-Or just use [codespaces](https://github.com/features/codespaces)! You can start from [here](https://github.com/Equinor-Playground/powerapps-codespaces) :)
+Or just use [codespaces](https://github.com/features/codespaces)! You can start from [here](https://github.com/Equinor-Playground/powerplatform-codespaces) :)
 
 ### 1. Set everything up
 
