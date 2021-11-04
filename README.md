@@ -10,7 +10,7 @@ Hello! Let's roll:
 3. [Microsoft Power Platform CLI](https://docs.microsoft.com/en-us/powerapps/developer/data-platform/powerapps-cli#install-power-apps-cli)
 4. [Build Tools for Visual Studio](https://visualstudio.microsoft.com/) or .NET build tools (msbuild is what you need)
 
-Or just use [codespaces](https://github.com/features/codespaces)! You can start from [here](https://github.com/Equinor-Playground/powerapps-codespaces) :)
+Or just use [codespaces](https://github.com/features/codespaces)! You can start from [here](https://github.com/Equinor-Playground/powerplatform-codespaces) :)
 
 ### 1. Set everything up
 
@@ -42,7 +42,7 @@ Open **ControlManifest.Input.xml** and look at control tag on **line 3**:
 `<control namespace="edcPCF" constructor="edsInput" version="0.0.1" display-name-key="edsInput" description-key="edsInput description" control-type="standard" >`  
 The `display-name-key` and `description-key` you put in here will be visible to people using the component so make sure to choose a good name. Think of the component as your baby, you would not want other components making fun of its name! 
 
-Here is an example of a very badly named componet:  
+Here is an example of a very badly named component:  
 `<control namespace="edsPCF" constructor="edsInput" version="0.0.1" display-name-key="Field" description-key="Field to format according to EDS Text Input" control-type="standard" >`  
 <p align = "center">
 <img src = "https://user-images.githubusercontent.com/75603877/139605014-6184bb5e-e644-4d0e-bbb4-dc4bdca5d76c.png"><br>
